@@ -1,0 +1,26 @@
+{
+  "dataset_summary": {
+    "total_samples": 8231,
+    "total_labels": 6,
+    "label_distribution": {
+      "Anger": 1389,
+      "Fear": 953,
+      "Joy": 1357,
+      "Love": 770,
+      "Neutral": 2654,
+      "Sad": 1108
+    }
+  },
+  "balance_analysis": {
+    "min_count": 770,
+    "max_count": 2654,
+    "imbalance_ratio": 3.446753246753247,
+    "balance_status": "imbalanced"
+  },
+  "text_statistics": {
+    "avg_char_length": 77.46361316972421,
+    "avg_word_count": 12.679018345280038,
+    "min_word_count": 1,
+    "max_word_count": 276
+  }
+}

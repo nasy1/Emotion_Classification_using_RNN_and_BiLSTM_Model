@@ -1,0 +1,55 @@
+==========================================================================================
+DETAILED MODEL COMPARISON REPORT - ENHANCED vs OPTIMIZED
+==========================================================================================
+
+EXECUTIVE SUMMARY:
+--------------------------------------------------
+Best Performing Model: BiLSTM (Optimized)
+Accuracy Difference: +1.64 percentage points
+F1-Score Difference: +2.36 percentage points
+Overall Score RNN (Enhanced): 0.6318
+Overall Score BiLSTM (Optimized): 0.6520
+Performance Gap: +2.02%
+
+MODEL CONFIGURATIONS:
+--------------------------------------------------
+RNN (Enhanced):
+ Architecture: 128 hidden units, 2 layers
+ Features: Self-Attention + Layer Normalization + Label Smoothing + Warmup Scheduler
+ Training: 40 epochs, adamw optimizer
+ Parameters: 63,623
+
+BiLSTM (Optimized):
+ Architecture: 64 hidden units, 1 layer, bidirectional
+ Features: Bidirectional LSTM + Optimized Hyperparameters
+ Training: 30 epochs, adam optimizer
+ Parameters: 85,766
+
+DETAILED PERFORMANCE METRICS:
+--------------------------------------------------
+             Model  Test Accuracy  Precision (Macro)  Recall (Macro)  F1-Score (Macro)  Training Time (s)  Parameters  Epochs  Hidden Size  Num Layers
+    RNN (Enhanced)       0.629022           0.646817        0.621731          0.632510          51.588497       63623      40          128           2
+BiLSTM (Optimized)       0.645416           0.653663        0.659506          0.656115          19.063239       85766      30           64           1
+
+EFFICIENCY ANALYSIS:
+--------------------------------------------------
+Training Time Ratio (BiLSTM/RNN): 0.37x
+Parameter Ratio (BiLSTM/RNN): 1.35x
+Performance per 1K Parameters:
+ RNN: 0.009887
+ BiLSTM: 0.007525
+
+RECOMMENDATIONS:
+--------------------------------------------------
+Primary Recommendation: Deploy BiLSTM (Optimized) for production use.
+Moderate performance difference - consider A/B testing.
+
+Deployment Considerations:
+- RNN has lower memory footprint
+- RNN provides attention mechanisms for interpretability
+- BiLSTM provides bidirectional context processing
+
+Next Steps:
+- Conduct real-world validation with production data
+- Monitor performance metrics in deployment
+- Consider ensemble approaches for maximum performance

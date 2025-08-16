@@ -1,0 +1,137 @@
+{
+  "performance_summary": {
+    "Model": {
+      "0": "RNN (Enhanced)",
+      "1": "BiLSTM (Optimized)"
+    },
+    "Test Accuracy": {
+      "0": 0.6290224650880388,
+      "1": 0.6454159077109897
+    },
+    "Precision (Macro)": {
+      "0": 0.6468168868959504,
+      "1": 0.6536633688990198
+    },
+    "Recall (Macro)": {
+      "0": 0.6217309078316409,
+      "1": 0.6595057839640301
+    },
+    "F1-Score (Macro)": {
+      "0": 0.6325098475659577,
+      "1": 0.656115086947295
+    },
+    "Training Time (s)": {
+      "0": 51.588497161865234,
+      "1": 19.063238859176636
+    },
+    "Parameters": {
+      "0": 63623,
+      "1": 85766
+    },
+    "Epochs": {
+      "0": 40,
+      "1": 30
+    },
+    "Hidden Size": {
+      "0": 128,
+      "1": 64
+    },
+    "Num Layers": {
+      "0": 2,
+      "1": 1
+    }
+  },
+  "model_comparison": {
+    "best_model": "BiLSTM (Optimized)",
+    "accuracy_difference": 0.016393442622950838,
+    "f1_difference": 0.023605239381337295,
+    "rnn_features": "Self-Attention + Layer Normalization + Enhanced Training",
+    "bilstm_features": "Bidirectional + Optimized Architecture"
+  },
+  "model_configurations": {
+    "rnn_config": {
+      "input_size": 100,
+      "hidden_size": 128,
+      "num_layers": 2,
+      "num_classes": 6,
+      "dropout": 0.3,
+      "learning_rate": 0.001,
+      "batch_size": 32,
+      "num_epochs": 40,
+      "weight_decay": 1e-05,
+      "optimizer": "adamw",
+      "scheduler": "warmup_plateau",
+      "label_smoothing": 0.1,
+      "gradient_clipping": 2.0,
+      "warmup_epochs": 3,
+      "warmup_lr": 1e-06
+    },
+    "bilstm_config": {
+      "input_size": 100,
+      "hidden_size": 64,
+      "num_layers": 1,
+      "num_classes": 6,
+      "dropout": 0.2,
+      "learning_rate": 0.002,
+      "batch_size": 64,
+      "num_epochs": 30,
+      "weight_decay": 0.0001,
+      "optimizer": "adam",
+      "scheduler": "reduce_lr_on_plateau",
+      "gradient_clipping": 1.0
+    },
+    "rnn_features": "Self-Attention + Layer Normalization + Label Smoothing + Warmup Scheduler",
+    "bilstm_features": "Bidirectional LSTM + Optimized Hyperparameters"
+  },
+  "overall_scores": {
+    "rnn_overall_score": 0.6318205144939254,
+    "bilstm_overall_score": 0.652023211046465,
+    "score_difference": 0.02020269655253959,
+    "performance_gap_percent": 2.020269655253959
+  },
+  "efficiency_metrics": {
+    "training_time_ratio": 0.36952498925028554,
+    "parameter_ratio": 1.3480345158197506,
+    "performance_per_parameter_rnn": 0.009886714947236672,
+    "performance_per_parameter_bilstm": 0.0075253119850638905
+  },
+  "recommendation": {
+    "best_model": "BiLSTM (Optimized)",
+    "accuracy_improvement_percent": 1.6393442622950838,
+    "f1_improvement_percent": 2.3605239381337295,
+    "recommended_for_production": "BiLSTM (Optimized)",
+    "confidence_level": "moderate",
+    "deployment_considerations": {
+      "resource_efficiency": "RNN",
+      "training_speed": "BiLSTM",
+      "model_complexity": "simple"
+    }
+  },
+  "analysis_metadata": {
+    "analysis_date": "2025-08-16T13:10:06.589688",
+    "metrics_evaluated": [
+      "test_accuracy",
+      "precision_macro",
+      "recall_macro",
+      "f1_macro"
+    ],
+    "evaluation_method": "test_set_evaluation",
+    "models_compared": [
+      "RNN (Enhanced)",
+      "BiLSTM (Optimized)"
+    ],
+    "enhancement_features": {
+      "rnn": [
+        "Self-Attention",
+        "Layer Normalization",
+        "Label Smoothing",
+        "Warmup Scheduler"
+      ],
+      "bilstm": [
+        "Bidirectional Processing",
+        "Optimized Hyperparameters",
+        "Efficient Architecture"
+      ]
+    }
+  }
+}
